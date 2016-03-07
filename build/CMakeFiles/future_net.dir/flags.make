@@ -6,5 +6,5 @@ CXX_FLAGS =  -O0 -Wall -g -ggdb
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I"/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/future_net/lib" 
+CXX_INCLUDES = -I"/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/future_net/lib" 
 

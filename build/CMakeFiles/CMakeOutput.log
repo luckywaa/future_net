@@ -10,7 +10,7 @@ The output was:
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
 
-The C compiler identification is GNU, found in "/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/3.4.3/CompilerIdC/a.out"
+The C compiler identification is GNU, found in "/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/3.4.3/CompilerIdC/a.out"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
 Compiler: /usr/bin/c++ 
@@ -23,36 +23,36 @@ The output was:
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
 
-The CXX compiler identification is GNU, found in "/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/3.4.3/CompilerIdCXX/a.out"
+The CXX compiler identification is GNU, found in "/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/3.4.3/CompilerIdCXX/a.out"
 
 Determining if the C compiler works passed with the following output:
-Change Dir: /home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp
+Change Dir: /home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_f34a7/fast"
-make[1]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_f34a7.dir/build.make CMakeFiles/cmTC_f34a7.dir/build
-make[2]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_f34a7.dir/testCCompiler.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_f34a7.dir/testCCompiler.c.o   -c "/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp/testCCompiler.c"
-Linking C executable cmTC_f34a7
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f34a7.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_f34a7.dir/testCCompiler.c.o  -o cmTC_f34a7 -rdynamic 
-make[2]:正在离开目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp'
-make[1]:正在离开目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_fc16f/fast"
+make[1]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_fc16f.dir/build.make CMakeFiles/cmTC_fc16f.dir/build
+make[2]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fc16f.dir/testCCompiler.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_fc16f.dir/testCCompiler.c.o   -c "/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp/testCCompiler.c"
+Linking C executable cmTC_fc16f
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fc16f.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_fc16f.dir/testCCompiler.c.o  -o cmTC_fc16f -rdynamic 
+make[2]:正在离开目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp'
+make[1]:正在离开目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp'
 
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: /home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp
+Change Dir: /home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_04f7e/fast"
-make[1]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_04f7e.dir/build.make CMakeFiles/cmTC_04f7e.dir/build
-make[2]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_04f7e.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_04f7e.dir/CMakeCCompilerABI.c.o   -c /usr/local/share/cmake-3.4/Modules/CMakeCCompilerABI.c
-Linking C executable cmTC_04f7e
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_04f7e.dir/link.txt --verbose=1
-/usr/bin/cc      -v CMakeFiles/cmTC_04f7e.dir/CMakeCCompilerABI.c.o  -o cmTC_04f7e -rdynamic  
+Run Build Command:"/usr/bin/make" "cmTC_74adb/fast"
+make[1]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_74adb.dir/build.make CMakeFiles/cmTC_74adb.dir/build
+make[2]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_74adb.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_74adb.dir/CMakeCCompilerABI.c.o   -c /usr/local/share/cmake-3.4/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_74adb
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_74adb.dir/link.txt --verbose=1
+/usr/bin/cc      -v CMakeFiles/cmTC_74adb.dir/CMakeCCompilerABI.c.o  -o cmTC_74adb -rdynamic  
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.8/lto-wrapper
@@ -62,25 +62,25 @@ Thread model: posix
 gcc version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04.1) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_04f7e' '-rdynamic' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_04f7e /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTC_04f7e.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o
-make[2]:正在离开目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp'
-make[1]:正在离开目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_74adb' '-rdynamic' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_74adb /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTC_74adb.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o
+make[2]:正在离开目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp'
+make[1]:正在离开目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp'
 
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_04f7e/fast"]
-  ignore line: [make[1]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp']
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_04f7e.dir/build.make CMakeFiles/cmTC_04f7e.dir/build]
-  ignore line: [make[2]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_04f7e.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc     -o CMakeFiles/cmTC_04f7e.dir/CMakeCCompilerABI.c.o   -c /usr/local/share/cmake-3.4/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTC_04f7e]
-  ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_04f7e.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc      -v CMakeFiles/cmTC_04f7e.dir/CMakeCCompilerABI.c.o  -o cmTC_04f7e -rdynamic  ]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_74adb/fast"]
+  ignore line: [make[1]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_74adb.dir/build.make CMakeFiles/cmTC_74adb.dir/build]
+  ignore line: [make[2]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_74adb.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc     -o CMakeFiles/cmTC_74adb.dir/CMakeCCompilerABI.c.o   -c /usr/local/share/cmake-3.4/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_74adb]
+  ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_74adb.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc      -v CMakeFiles/cmTC_74adb.dir/CMakeCCompilerABI.c.o  -o cmTC_74adb -rdynamic  ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.8/lto-wrapper]
@@ -90,8 +90,8 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04.1) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_04f7e' '-rdynamic' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_04f7e /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTC_04f7e.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_74adb' '-rdynamic' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_74adb /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTC_74adb.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/collect2] ==> ignore
     arg [--sysroot=/] ==> ignore
     arg [--build-id] ==> ignore
@@ -105,7 +105,7 @@ Parsed C implicit link information from above output:
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_04f7e] ==> ignore
+    arg [cmTC_74adb] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o] ==> ignore
@@ -117,7 +117,7 @@ Parsed C implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../..]
-    arg [CMakeFiles/cmTC_04f7e.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_74adb.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--as-needed] ==> ignore
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -149,19 +149,19 @@ Parsed C implicit link information from above output:
 
 
 Detecting C [-std=c11] compiler features compiled with the following output:
-Change Dir: /home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp
+Change Dir: /home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_302dd/fast"
-make[1]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_302dd.dir/build.make CMakeFiles/cmTC_302dd.dir/build
-make[2]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_302dd.dir/feature_tests.c.o
-/usr/bin/cc    -std=c11 -o CMakeFiles/cmTC_302dd.dir/feature_tests.c.o   -c "/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/feature_tests.c"
-Linking C executable cmTC_302dd
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_302dd.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_302dd.dir/feature_tests.c.o  -o cmTC_302dd -rdynamic 
-make[2]:正在离开目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp'
-make[1]:正在离开目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_2bd3b/fast"
+make[1]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_2bd3b.dir/build.make CMakeFiles/cmTC_2bd3b.dir/build
+make[2]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2bd3b.dir/feature_tests.c.o
+/usr/bin/cc    -std=c11 -o CMakeFiles/cmTC_2bd3b.dir/feature_tests.c.o   -c "/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/feature_tests.c"
+Linking C executable cmTC_2bd3b
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2bd3b.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_2bd3b.dir/feature_tests.c.o  -o cmTC_2bd3b -rdynamic 
+make[2]:正在离开目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp'
+make[1]:正在离开目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -171,19 +171,19 @@ make[1]:正在离开目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题
 
 
 Detecting C [-std=c99] compiler features compiled with the following output:
-Change Dir: /home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp
+Change Dir: /home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_1752f/fast"
-make[1]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_1752f.dir/build.make CMakeFiles/cmTC_1752f.dir/build
-make[2]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_1752f.dir/feature_tests.c.o
-/usr/bin/cc    -std=c99 -o CMakeFiles/cmTC_1752f.dir/feature_tests.c.o   -c "/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/feature_tests.c"
-Linking C executable cmTC_1752f
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1752f.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_1752f.dir/feature_tests.c.o  -o cmTC_1752f -rdynamic 
-make[2]:正在离开目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp'
-make[1]:正在离开目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_7ecc7/fast"
+make[1]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_7ecc7.dir/build.make CMakeFiles/cmTC_7ecc7.dir/build
+make[2]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7ecc7.dir/feature_tests.c.o
+/usr/bin/cc    -std=c99 -o CMakeFiles/cmTC_7ecc7.dir/feature_tests.c.o   -c "/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/feature_tests.c"
+Linking C executable cmTC_7ecc7
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7ecc7.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_7ecc7.dir/feature_tests.c.o  -o cmTC_7ecc7 -rdynamic 
+make[2]:正在离开目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp'
+make[1]:正在离开目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -193,19 +193,19 @@ make[1]:正在离开目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题
 
 
 Detecting C [-std=c90] compiler features compiled with the following output:
-Change Dir: /home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp
+Change Dir: /home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_bc3f0/fast"
-make[1]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_bc3f0.dir/build.make CMakeFiles/cmTC_bc3f0.dir/build
-make[2]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_bc3f0.dir/feature_tests.c.o
-/usr/bin/cc    -std=c90 -o CMakeFiles/cmTC_bc3f0.dir/feature_tests.c.o   -c "/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/feature_tests.c"
-Linking C executable cmTC_bc3f0
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bc3f0.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_bc3f0.dir/feature_tests.c.o  -o cmTC_bc3f0 -rdynamic 
-make[2]:正在离开目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp'
-make[1]:正在离开目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_fedfa/fast"
+make[1]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_fedfa.dir/build.make CMakeFiles/cmTC_fedfa.dir/build
+make[2]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fedfa.dir/feature_tests.c.o
+/usr/bin/cc    -std=c90 -o CMakeFiles/cmTC_fedfa.dir/feature_tests.c.o   -c "/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/feature_tests.c"
+Linking C executable cmTC_fedfa
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fedfa.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_fedfa.dir/feature_tests.c.o  -o cmTC_fedfa -rdynamic 
+make[2]:正在离开目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp'
+make[1]:正在离开目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -213,33 +213,33 @@ make[1]:正在离开目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题
     Feature record: C_FEATURE:0c_static_assert
     Feature record: C_FEATURE:0c_variadic_macros
 Determining if the CXX compiler works passed with the following output:
-Change Dir: /home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp
+Change Dir: /home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_c1dc0/fast"
-make[1]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_c1dc0.dir/build.make CMakeFiles/cmTC_c1dc0.dir/build
-make[2]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_c1dc0.dir/testCXXCompiler.cxx.o
-/usr/bin/c++      -o CMakeFiles/cmTC_c1dc0.dir/testCXXCompiler.cxx.o -c "/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx"
-Linking CXX executable cmTC_c1dc0
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c1dc0.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_c1dc0.dir/testCXXCompiler.cxx.o  -o cmTC_c1dc0 -rdynamic 
-make[2]:正在离开目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp'
-make[1]:正在离开目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_2e3f6/fast"
+make[1]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_2e3f6.dir/build.make CMakeFiles/cmTC_2e3f6.dir/build
+make[2]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_2e3f6.dir/testCXXCompiler.cxx.o
+/usr/bin/c++      -o CMakeFiles/cmTC_2e3f6.dir/testCXXCompiler.cxx.o -c "/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx"
+Linking CXX executable cmTC_2e3f6
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2e3f6.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_2e3f6.dir/testCXXCompiler.cxx.o  -o cmTC_2e3f6 -rdynamic 
+make[2]:正在离开目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp'
+make[1]:正在离开目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: /home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp
+Change Dir: /home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_8a0c4/fast"
-make[1]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_8a0c4.dir/build.make CMakeFiles/cmTC_8a0c4.dir/build
-make[2]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_8a0c4.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++      -o CMakeFiles/cmTC_8a0c4.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake-3.4/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_8a0c4
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8a0c4.dir/link.txt --verbose=1
-/usr/bin/c++       -v CMakeFiles/cmTC_8a0c4.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_8a0c4 -rdynamic  
+Run Build Command:"/usr/bin/make" "cmTC_24cf2/fast"
+make[1]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_24cf2.dir/build.make CMakeFiles/cmTC_24cf2.dir/build
+make[2]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_24cf2.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++      -o CMakeFiles/cmTC_24cf2.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake-3.4/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_24cf2
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_24cf2.dir/link.txt --verbose=1
+/usr/bin/c++       -v CMakeFiles/cmTC_24cf2.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_24cf2 -rdynamic  
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.8/lto-wrapper
@@ -249,25 +249,25 @@ Thread model: posix
 gcc version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04.1) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8a0c4' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_8a0c4 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTC_8a0c4.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o
-make[2]:正在离开目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp'
-make[1]:正在离开目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_24cf2' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_24cf2 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTC_24cf2.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o
+make[2]:正在离开目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp'
+make[1]:正在离开目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp'
 
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_8a0c4/fast"]
-  ignore line: [make[1]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp']
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_8a0c4.dir/build.make CMakeFiles/cmTC_8a0c4.dir/build]
-  ignore line: [make[2]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_8a0c4.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++      -o CMakeFiles/cmTC_8a0c4.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake-3.4/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTC_8a0c4]
-  ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8a0c4.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++       -v CMakeFiles/cmTC_8a0c4.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_8a0c4 -rdynamic  ]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_24cf2/fast"]
+  ignore line: [make[1]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_24cf2.dir/build.make CMakeFiles/cmTC_24cf2.dir/build]
+  ignore line: [make[2]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_24cf2.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++      -o CMakeFiles/cmTC_24cf2.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake-3.4/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_24cf2]
+  ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_24cf2.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++       -v CMakeFiles/cmTC_24cf2.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_24cf2 -rdynamic  ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.8/lto-wrapper]
@@ -277,8 +277,8 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04.1) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8a0c4' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_8a0c4 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTC_8a0c4.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_24cf2' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_24cf2 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTC_24cf2.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/collect2] ==> ignore
     arg [--sysroot=/] ==> ignore
     arg [--build-id] ==> ignore
@@ -292,7 +292,7 @@ Parsed CXX implicit link information from above output:
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_8a0c4] ==> ignore
+    arg [cmTC_24cf2] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o] ==> ignore
@@ -304,7 +304,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../..]
-    arg [CMakeFiles/cmTC_8a0c4.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_24cf2.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -334,19 +334,19 @@ Parsed CXX implicit link information from above output:
 
 
 Detecting CXX [-std=c++1y] compiler features compiled with the following output:
-Change Dir: /home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp
+Change Dir: /home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_20efb/fast"
-make[1]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_20efb.dir/build.make CMakeFiles/cmTC_20efb.dir/build
-make[2]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_20efb.dir/feature_tests.cxx.o
-/usr/bin/c++     -std=c++1y -o CMakeFiles/cmTC_20efb.dir/feature_tests.cxx.o -c "/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/feature_tests.cxx"
-Linking CXX executable cmTC_20efb
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_20efb.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_20efb.dir/feature_tests.cxx.o  -o cmTC_20efb -rdynamic 
-make[2]:正在离开目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp'
-make[1]:正在离开目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_9c26c/fast"
+make[1]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_9c26c.dir/build.make CMakeFiles/cmTC_9c26c.dir/build
+make[2]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_9c26c.dir/feature_tests.cxx.o
+/usr/bin/c++     -std=c++1y -o CMakeFiles/cmTC_9c26c.dir/feature_tests.cxx.o -c "/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/feature_tests.cxx"
+Linking CXX executable cmTC_9c26c
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9c26c.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_9c26c.dir/feature_tests.cxx.o  -o cmTC_9c26c -rdynamic 
+make[2]:正在离开目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp'
+make[1]:正在离开目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -409,19 +409,19 @@ make[1]:正在离开目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题
 
 
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
-Change Dir: /home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp
+Change Dir: /home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_19c38/fast"
-make[1]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_19c38.dir/build.make CMakeFiles/cmTC_19c38.dir/build
-make[2]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_19c38.dir/feature_tests.cxx.o
-/usr/bin/c++     -std=c++11 -o CMakeFiles/cmTC_19c38.dir/feature_tests.cxx.o -c "/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/feature_tests.cxx"
-Linking CXX executable cmTC_19c38
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_19c38.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_19c38.dir/feature_tests.cxx.o  -o cmTC_19c38 -rdynamic 
-make[2]:正在离开目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp'
-make[1]:正在离开目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_13fb3/fast"
+make[1]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_13fb3.dir/build.make CMakeFiles/cmTC_13fb3.dir/build
+make[2]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_13fb3.dir/feature_tests.cxx.o
+/usr/bin/c++     -std=c++11 -o CMakeFiles/cmTC_13fb3.dir/feature_tests.cxx.o -c "/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/feature_tests.cxx"
+Linking CXX executable cmTC_13fb3
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_13fb3.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_13fb3.dir/feature_tests.cxx.o  -o cmTC_13fb3 -rdynamic 
+make[2]:正在离开目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp'
+make[1]:正在离开目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -484,19 +484,19 @@ make[1]:正在离开目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题
 
 
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
-Change Dir: /home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp
+Change Dir: /home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_03ac9/fast"
-make[1]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_03ac9.dir/build.make CMakeFiles/cmTC_03ac9.dir/build
-make[2]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_03ac9.dir/feature_tests.cxx.o
-/usr/bin/c++     -std=c++98 -o CMakeFiles/cmTC_03ac9.dir/feature_tests.cxx.o -c "/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/feature_tests.cxx"
-Linking CXX executable cmTC_03ac9
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_03ac9.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_03ac9.dir/feature_tests.cxx.o  -o cmTC_03ac9 -rdynamic 
-make[2]:正在离开目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp'
-make[1]:正在离开目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_57172/fast"
+make[1]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_57172.dir/build.make CMakeFiles/cmTC_57172.dir/build
+make[2]: 正在进入目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_57172.dir/feature_tests.cxx.o
+/usr/bin/c++     -std=c++98 -o CMakeFiles/cmTC_57172.dir/feature_tests.cxx.o -c "/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/feature_tests.cxx"
+Linking CXX executable cmTC_57172
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_57172.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_57172.dir/feature_tests.cxx.o  -o cmTC_57172 -rdynamic 
+make[2]:正在离开目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp'
+make[1]:正在离开目录 `/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/future_net/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
