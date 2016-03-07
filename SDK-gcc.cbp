@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="SDK-gcc" />
+		<Option execution_dir="/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/build" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/SDK-gcc" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option parameters="graph.csv condition.csv test" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="future_net/lib" />
+				</Compiler>
+				<Linker>
+					<Add library="lib/lib_io.a" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/SDK-gcc" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option parameters="graph.csv condition.csv" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/future_net/lib" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/lib/lib_io.a" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="batch64.sh" />
+		<Unit filename="build/Makefile" />
+		<Unit filename="future_net/CMakeLists.txt" />
+		<Unit filename="future_net/future_net.cpp" />
+		<Unit filename="future_net/lib/lib_io.a" />
+		<Unit filename="future_net/lib/lib_io.h" />
+		<Unit filename="future_net/lib/lib_record.h" />
+		<Unit filename="future_net/lib/lib_time.h" />
+		<Unit filename="future_net/route.cpp" />
+		<Unit filename="future_net/route.h" />
+		<Unit filename="lib/32/lib_io.a" />
+		<Unit filename="lib/64/lib_io.a" />
+		<Unit filename="lib/lib_io.a" />
+		<Unit filename="readme.txt" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

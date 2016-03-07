@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1457336640 source:/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/future_net/future_net.cpp
+	"route.h"
+	"lib_io.h"
+	"lib_time.h"
+
+1457075720 /home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/future_net/route.h
+
+1457336640 source:/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/future_net/route.cpp
+	"route.h"
+	"lib_record.h"
+	<stdio.h>
+	<iostream>
+	<vector>
+
+1457075004 /home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/future_net/lib/lib_io.h
+
+1457075004 /home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/future_net/lib/lib_time.h
+
+1457075004 /home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/future_net/lib/lib_record.h
+

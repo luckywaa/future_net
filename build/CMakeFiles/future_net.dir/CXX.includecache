@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/future_net/future_net.cpp
+route.h
+/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/future_net/route.h
+lib_io.h
+/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/future_net/lib_io.h
+lib_time.h
+/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/future_net/lib_time.h
+
+/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/future_net/lib/lib_io.h
+
+/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/future_net/lib/lib_record.h
+
+/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/future_net/lib/lib_time.h
+
+/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/future_net/route.cpp
+route.h
+/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/future_net/route.h
+lib_record.h
+/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/future_net/lib_record.h
+stdio.h
+-
+iostream
+-
+vector
+-
+
+/home/zsd/桌面/huawei code craft 2016 初赛赛题包/project0/SDK-gcc/future_net/route.h
+
