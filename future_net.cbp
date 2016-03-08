@@ -11,6 +11,7 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Option parameters="test-case/case1/topo.csv  test-case/case1/demand.csv result.csv " />
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>
@@ -31,6 +32,13 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="future_net/future_net.cpp" />
+		<Unit filename="future_net/io.cpp" />
+		<Unit filename="future_net/lib/lib_io.h" />
+		<Unit filename="future_net/lib/lib_record.h" />
+		<Unit filename="future_net/lib/lib_time.h" />
+		<Unit filename="future_net/route.cpp" />
+		<Unit filename="future_net/route.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />
