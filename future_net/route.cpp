@@ -2,45 +2,12 @@
 #include "lib/lib_record.h"
 #include <stdio.h>
 
-#include <iostream>
-#include <vector>
-
-using namespace std;
-
-class LINK
-{
-public:
-    int LinkID;
-    int SourceID;
-    int DestinationID;
-    int Cost;
-};
-class NODE
-{
-public:
-    unsigned short ID;
-    vector<LINK*> nodeLinks;
-    bool isVisted;
-    NODE();
-};
-class PATH
-{
-public:
-    vector<int> linkIDs;
-    int cost;
-    vector<unsigned short> nodeIDs;
-    PATH();
-};
-
 PATH path,pathTemp;
 vector<LINK> links;
 LINK *link;
 vector<NODE> nodes(700);
 unsigned short SourceID,DestinationID;
 vector<unsigned short> V;//is V' . And we can sort it,so when we use ,we can save time.
-
-bool DeepSearch(NODE &node,LINK *link);
-bool StartDeepSearch();
 
 //你要完成的功能总入口
 void search_route(char *topo[5000], int edge_num, char *demand)
@@ -146,10 +113,12 @@ NODE::NODE()
 {
     isVisted=false;
 }
+
 PATH::PATH()
 {
     cost=9999999;
 }
+
 bool DeepSearch(NODE &node,LINK *link)
 {
     if(node.isVisted==false)
@@ -218,6 +187,7 @@ bool DeepSearch(NODE &node,LINK *link)
         return false;
     }
 }
+
 bool StartDeepSearch()
 {
     pathTemp.nodeIDs.push_back(SourceID);
