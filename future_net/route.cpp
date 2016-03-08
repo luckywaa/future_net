@@ -62,8 +62,7 @@ void search_route(char *topo[5000], int edge_num, char *demand)
         if((int)links.size()==edge_num) break;
     }
 
-    for(int i=0,num=0,countNum=0; i<(int)(sizeof(demand)/sizeof(demand[0]));
-    i++) //input demand
+    for(int i=0,num=0,countNum=0; ((demand[i]>='0'&&demand[i]<='9')||demand[i]==','||demand[i]=='|'); i++) //input demand
     {
         if(demand[i]>='0' && demand[i]<='9')
         {

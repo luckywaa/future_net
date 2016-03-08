@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
         printf("Please input valid demand file.\n");
         return -1;
     }
-
+cout<<"";
     search_route(topo, edge_num, demand);
 
     char *result_file = argv[3];

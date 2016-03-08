@@ -31,3 +31,35 @@
 
 1457273230 /home/zsd/桌面/HUAWEI Code Craft 2016 初赛赛题包/future_net/future_net/lib/lib_record.h
 
+1457414460 source:/home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/future_net/future_net/future_net.cpp
+	"route.h"
+	"lib/lib_io.h"
+	"lib/lib_time.h"
+	"stdio.h"
+
+1457411206 /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/future_net/future_net/route.h
+	<iostream>
+	<vector>
+
+1457322532 /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/future_net/future_net/lib/lib_io.h
+
+1457273188 /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/future_net/future_net/lib/lib_time.h
+
+1457338188 source:/home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/future_net/future_net/io.cpp
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+	<time.h>
+	<sys/timeb.h>
+	<errno.h>
+	<unistd.h>
+	<signal.h>
+
+1457414828 source:/home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/future_net/future_net/route.cpp
+	"route.h"
+	"lib/lib_record.h"
+	<stdio.h>
+
+1457273230 /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/future_net/future_net/lib/lib_record.h
+
