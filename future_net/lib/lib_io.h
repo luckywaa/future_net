@@ -1,16 +1,16 @@
 #ifndef __LIB_IO_H__
 #define __LIB_IO_H__
 
-//¶ÁÈ¡ÎÄ¼ş²¢°´ĞĞÊä³öµ½buff¡£
-//buffÎªÒ»¸öÖ¸ÕëÊı×é£¬Ã¿Ò»¸öÔªËØÊÇÒ»¸ö×Ö·ûÖ¸Õë£¬¶ÔÓ¦ÎÄ¼şÖĞÒ»ĞĞµÄÄÚÈİ¡£
-//specÎªÔÊĞí½âÎöµÄ×î´óĞĞÊı¡£
+//è¯»å–æ–‡ä»¶å¹¶æŒ‰è¡Œè¾“å‡ºåˆ°buffã€‚
+//buffä¸ºä¸€ä¸ªæŒ‡é’ˆæ•°ç»„ï¼Œæ¯ä¸€ä¸ªå…ƒç´ æ˜¯ä¸€ä¸ªå­—ç¬¦æŒ‡é’ˆï¼Œå¯¹åº”æ–‡ä»¶ä¸­ä¸€è¡Œçš„å†…å®¹ã€‚
+//specä¸ºå…è®¸è§£æçš„æœ€å¤§è¡Œæ•°ã€‚
 extern int read_file(char ** const buff, const unsigned int spec, const char * const filename);
 
-//½«result»º³åÇøÖĞµÄÄÚÈİĞ´ÈëÎÄ¼ş£¬Ğ´Èë·½Ê½Îª¸²¸ÇĞ´Èë
+//å°†resultç¼“å†²åŒºä¸­çš„å†…å®¹å†™å…¥æ–‡ä»¶ï¼Œå†™å…¥æ–¹å¼ä¸ºè¦†ç›–å†™å…¥
 extern void write_result(const char * const filename);
 
-//ÊÍ·Å¶ÁÎÄ¼şµÄ»º³åÇø
-extern void release_buff(char ** const buff, const int len);
+//é‡Šæ”¾è¯»æ–‡ä»¶çš„ç¼“å†²åŒº
+extern void release_buff(char ** const buff, const int valid_item_num);
 
 #endif
 

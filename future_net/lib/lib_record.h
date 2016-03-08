@@ -1,7 +1,7 @@
 #ifndef __LIB_RECORD_H__
 #define __LIB_RECORD_H__
 
-//½«½á¹û¼ÇÂ¼µ½result»º³åÇø
+//å°†ç»“æžœè®°å½•åˆ°resultç¼“å†²åŒº
 extern void record_result(const unsigned short edge);
 
 #endif
