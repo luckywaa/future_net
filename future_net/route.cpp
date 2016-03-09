@@ -96,7 +96,9 @@ void search_route(char *topo[5000], int edge_num, char *demand)
     }
     else
     {
-        for(int i=0; i<(int)path.linkIDs.size(); i++)
+        int linkSize;
+        linkSize=path.linkIDs.size();
+        for(int i=0; i<linkSize; i++)
         {
             record_result((unsigned short)path.linkIDs[i]);
         }
@@ -132,7 +134,9 @@ bool DeepSearch(NODE &node,LINK *link)
                 node.isVisted=true;
                 bool isFind;
                 isFind=false;
-                for(int i=0; i<(int)node.nodeLinks.size(); i++)
+                int linkSize;
+                linkSize=node.nodeLinks.size();
+                for(int i=0; i<linkSize; i++)
                 {
                     if(DeepSearch(nodes[node.nodeLinks[i]->DestinationID],node.nodeLinks[i])==true) isFind=true;
                 }
@@ -150,7 +154,9 @@ bool DeepSearch(NODE &node,LINK *link)
                 {
                     bool isJVisted;
                     isJVisted=false;
-                    for(int j=0; j<(int)pathTemp.nodeIDs.size(); j++)
+                    int nodeSize;
+                    nodeSize=pathTemp.nodeIDs.size();
+                    for(int j=1; j<nodeSize-1; j++)
                     {
                         if(V[i]==pathTemp.nodeIDs[j])
                         {
@@ -165,6 +171,7 @@ bool DeepSearch(NODE &node,LINK *link)
                         break;
                     }
                 }
+
                 if(isVVisted==true)
                 {
                     path=pathTemp;
@@ -194,7 +201,9 @@ bool StartDeepSearch()
     nodes[SourceID].isVisted=true;
     bool isFind;
     isFind=false;
-    for(int i=0; i<(int)nodes[SourceID].nodeLinks.size(); i++)
+    int linkSize;
+    linkSize=nodes[SourceID].nodeLinks.size();
+    for(int i=0; i<linkSize; i++)
     {
         if(DeepSearch(nodes[nodes[SourceID].nodeLinks[i]->DestinationID],nodes[SourceID].nodeLinks[i])==true) isFind=true;
     }
