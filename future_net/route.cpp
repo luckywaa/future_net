@@ -238,5 +238,6 @@ bool CompareLink(const LINK *a,const LINK *b)
     if(isInVa==true && isInVb==false)  return true;
     if(isInVa==false && isInVb==true)  return false;
     //若都在，或都不在，则比较Cost
+    if(a->DestinationID==SourceID) return true;
     return a->Cost<b->Cost;
 }
