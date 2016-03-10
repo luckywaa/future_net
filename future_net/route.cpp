@@ -1,6 +1,7 @@
 #include "route.h"
 #include "lib/lib_record.h"
 #include <stdio.h>
+#include <algorithm>
 
 PATH path,pathTemp;
 vector<LINK> links;
@@ -90,6 +91,9 @@ void search_route(char *topo[5000], int edge_num, char *demand)
         }
         if(demand[i]=='\n') break;
     }
+    sort(V.begin(),V.end());
+    //IsInV(543);
+
     if(StartDeepSearch()==false)
     {
         cout<<"NA"<<endl;
@@ -113,6 +117,7 @@ void search_route(char *topo[5000], int edge_num, char *demand)
 NODE::NODE()
 {
     isVisted=false;
+    isSorted=false;
 }
 
 PATH::PATH()
@@ -134,6 +139,11 @@ bool DeepSearch(NODE &node,LINK *link)
                 node.isVisted=true;
                 bool isFind;
                 isFind=false;
+                if(node.isSorted==false)
+                {
+                    sort(node.nodeLinks.begin(),node.nodeLinks.end(),CompareLink);
+                    node.isSorted=true;
+                }
                 int linkSize;
                 linkSize=node.nodeLinks.size();
                 for(int i=0; i<linkSize; i++)
@@ -201,6 +211,11 @@ bool StartDeepSearch()
     nodes[SourceID].isVisted=true;
     bool isFind;
     isFind=false;
+    if(nodes[SourceID].isSorted==false)
+    {
+        sort(nodes[SourceID].nodeLinks.begin(),nodes[SourceID].nodeLinks.end(),CompareLink);
+        nodes[SourceID].isSorted=true;
+    }
     int linkSize;
     linkSize=nodes[SourceID].nodeLinks.size();
     for(int i=0; i<linkSize; i++)
@@ -208,4 +223,20 @@ bool StartDeepSearch()
         if(DeepSearch(nodes[nodes[SourceID].nodeLinks[i]->DestinationID],nodes[SourceID].nodeLinks[i])==true) isFind=true;
     }
     return isFind;
+}
+
+bool IsInV(int ID)
+{
+    return binary_search(V.begin(),V.end(),ID);
+}
+
+bool CompareLink(const LINK *a,const LINK *b)
+{
+    bool isInVa,isInVb;
+    isInVa=IsInV(a->DestinationID);
+    isInVb=IsInV(b->DestinationID);
+    if(isInVa==true && isInVb==false)  return true;
+    if(isInVa==false && isInVb==true)  return false;
+    //若都在，或都不在，则比较Cost
+    return a->Cost<b->Cost;
 }

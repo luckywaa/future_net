@@ -23,6 +23,7 @@ public:
     vector<LINK*> nodeLinks;
     bool isVisted;
     NODE();
+    bool isSorted;
 };
 class PATH
 {
@@ -37,5 +38,7 @@ public:
 
 bool DeepSearch(NODE &node,LINK *link);
 bool StartDeepSearch();
+bool IsInV(int ID);
+bool CompareLink(const LINK *a,const LINK *b);
 
 #endif
