@@ -1,7 +1,11 @@
+#define NDEBUG
+#define NDEBUG1
+
 #include "route.h"
 #include "lib/lib_record.h"
 #include <stdio.h>
 #include <algorithm>
+#include <sys/timeb.h>
 
 PATH path,pathTemp;
 vector<LINK> links;
@@ -9,10 +13,18 @@ LINK *link;
 vector<NODE> nodes(700);
 unsigned short SourceID,DestinationID;
 vector<unsigned short> V;//is V' . And we can sort it,so when we use ,we can save time.
+int msStart;
+unsigned long sStart;
 
 //你要完成的功能总入口
 void search_route(char *topo[5000], int edge_num, char *demand)
 {
+    StartTime();
+
+#ifndef NDEBUG
+    PrintTime();
+#endif // NDEBUG
+
     for(int i=0;; i++)//input topo[
     {
         int num,countNum;
@@ -105,6 +117,9 @@ void search_route(char *topo[5000], int edge_num, char *demand)
         {
             record_result((unsigned short)path.linkIDs[i]);
         }
+#ifndef NDEBUG1
+        cout<<endl<<path.cost<<endl<<endl;
+#endif // NDEBUG1
     }
 
     /*unsigned short result[] = {2, 6, 3};//示例中的一个解
@@ -121,11 +136,32 @@ NODE::NODE()
 
 PATH::PATH()
 {
-    cost=9999999;
+    cost=INF;
 }
 
 bool DeepSearch(NODE &node,LINK *link)
 {
+    struct timeb rawtime;
+    ftime(&rawtime);
+    int out_ms = rawtime.millitm - msStart;
+    unsigned long out_s = rawtime.time - sStart;
+    if (out_ms < 0)
+    {
+        out_ms += 1000;
+        out_s -= 1;
+    }
+    if(out_s==9 && out_ms>930)
+    {
+        if(path.cost<INF)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     if(node.isVisted==false)
     {
         if((pathTemp.cost+link->Cost)<path.cost)
@@ -162,8 +198,10 @@ bool DeepSearch(NODE &node,LINK *link)
                 copy(pathTemp.nodeIDs.begin()+1,pathTemp.nodeIDs.end()-1,pathNodeIDs.begin());
                 sort(pathNodeIDs.begin(),pathNodeIDs.end());
                 isVVisted=true;
-                for(int i=0;i<(int)V.size();i++){
-                    if(binary_search(pathNodeIDs.begin(),pathNodeIDs.end(),V[i])==false){
+                for(int i=0; i<(int)V.size(); i++)
+                {
+                    if(binary_search(pathNodeIDs.begin(),pathNodeIDs.end(),V[i])==false)
+                    {
                         isVVisted=false;
                         break;
                     }
@@ -172,6 +210,20 @@ bool DeepSearch(NODE &node,LINK *link)
                 {
                     path=pathTemp;
                 }
+#ifndef NDEBUG
+                if(isVVisted==true) cout<<"=========================================================="<<endl;
+                cout<<pathTemp.cost<<" : ";
+                PrintTime();
+                int nodeIDsSize;
+                nodeIDsSize=pathTemp.nodeIDs.size();
+                for(int i=0; i<nodeIDsSize-1; i++)
+                {
+                    cout<<pathTemp.nodeIDs[i]<<"-->";
+                }
+                cout<<pathTemp.nodeIDs[nodeIDsSize-1]<<endl;
+                if(isVVisted==true) cout<<"=========================================================="<<endl;
+                cout<<endl;
+#endif // NDEBUG
                 pathTemp.linkIDs.erase(--pathTemp.linkIDs.end());
                 pathTemp.nodeIDs.erase(--pathTemp.nodeIDs.end());
                 pathTemp.cost-=link->Cost;
@@ -226,4 +278,28 @@ bool CompareLink(const LINK *a,const LINK *b)
     //若都在，或都不在，则比较Cost
     if(a->DestinationID==SourceID) return true;
     return a->Cost<b->Cost;
+}
+
+#ifndef NDEBUG
+void PrintTime()
+{
+    struct timeb rawtime;
+    ftime(&rawtime);
+    int out_ms = rawtime.millitm - msStart;
+    unsigned long out_s = rawtime.time - sStart;
+    if (out_ms < 0)
+    {
+        out_ms += 1000;
+        out_s -= 1;
+    }
+    printf("used time is %lu s %d ms.\n", out_s, out_ms);
+}
+#endif // NDEBUG
+
+void StartTime()
+{
+    struct timeb rawtime;
+    ftime(&rawtime);
+    msStart = rawtime.millitm;
+    sStart = rawtime.time;
 }

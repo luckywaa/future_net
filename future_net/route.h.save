@@ -6,7 +6,7 @@
 
 using namespace std;
 
-const int INF=9999999;
+con
 
 void search_route(char *graph[5000], int edge_num, char *condition);
 
