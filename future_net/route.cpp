@@ -92,7 +92,6 @@ void search_route(char *topo[5000], int edge_num, char *demand)
         if(demand[i]=='\n') break;
     }
     sort(V.begin(),V.end());
-    //IsInV(543);
 
     if(StartDeepSearch()==false)
     {
@@ -159,7 +158,6 @@ bool DeepSearch(NODE &node,LINK *link)
             else
             {
                 bool isVVisted;
-                //isVVisted=false;
                 vector<unsigned short>  pathNodeIDs(pathTemp.nodeIDs.size()-2);
                 copy(pathTemp.nodeIDs.begin()+1,pathTemp.nodeIDs.end()-1,pathNodeIDs.begin());
                 sort(pathNodeIDs.begin(),pathNodeIDs.end());
@@ -170,28 +168,6 @@ bool DeepSearch(NODE &node,LINK *link)
                         break;
                     }
                 }
-                /*for(int i=0; i<(int)V.size(); i++)
-                {
-                    bool isJVisted;
-                    isJVisted=false;
-                    int nodeSize;
-                    nodeSize=pathTemp.nodeIDs.size();
-                    for(int j=1; j<nodeSize-1; j++)
-                    {
-                        if(V[i]==pathTemp.nodeIDs[j])
-                        {
-                            isJVisted=true;
-                            break;
-                        }
-                    }
-                    if(isJVisted==false) break;
-                    else if(i==(int)(V.size()-1))
-                    {
-                        isVVisted=true;
-                        break;
-                    }
-                }*/
-
                 if(isVVisted==true)
                 {
                     path=pathTemp;
