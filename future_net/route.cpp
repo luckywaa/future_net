@@ -1,5 +1,7 @@
 #define NDEBUG
-#define NDEBUG1
+//#define NDEBUG1
+#define DEADLINEMS 930//930
+#define DEADLINES 9999999//9
 
 #include "route.h"
 #include "lib/lib_record.h"
@@ -150,7 +152,7 @@ bool DeepSearch(NODE &node,LINK *link)
         out_ms += 1000;
         out_s -= 1;
     }
-    if(out_s==9 && out_ms>930)
+    if(out_s==DEADLINES && out_ms>DEADLINEMS)
     {
         if(path.cost<INF)
         {

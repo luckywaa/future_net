@@ -1,5 +1,7 @@
 #define NDEBUG
 //#define NDEBUG1
+#define DEADLINEMS 930//930
+#define DEADLINES 9999999//9
 
 #include "route.h"
 #include "lib/lib_record.h"
@@ -117,8 +119,9 @@ void search_route(char *topo[5000], int edge_num, char *demand)
         {
             record_result((unsigned short)path.linkIDs[i]);
         }
-        #ifndef NDEBUG1
+#ifndef NDEBUG1
         cout<<endl<<path.cost<<endl<<endl;
+#endif // NDEBUG1
     }
 
     /*unsigned short result[] = {2, 6, 3};//示例中的一个解
@@ -149,11 +152,14 @@ bool DeepSearch(NODE &node,LINK *link)
         out_ms += 1000;
         out_s -= 1;
     }
-    if(out_s==9 && out_ms>930){
-        if(path.cost<INF){
+    if(out_s==DEADLINES && out_ms>DEADLINEMS)
+    {
+        if(path.cost<INF)
+        {
             return true;
         }
-        else{
+        else
+        {
             return false;
         }
     }
