@@ -36,8 +36,8 @@ public:
     PATH();
 };
 
-bool DeepSearch(NODE &node,LINK *link);
-bool StartDeepSearch();
+int ThreadSearch(PATH pathTemp,int nodeID,int linkID);
+int StartThreadSearch(PATH pathTemp);
 bool IsInV(int ID);
 bool CompareLink(const LINK *a,const LINK *b);
 

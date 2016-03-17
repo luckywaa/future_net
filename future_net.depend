@@ -56,7 +56,7 @@
 	<unistd.h>
 	<signal.h>
 
-1457965970 source:/home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/future_net/future_net/route.cpp
+1458193493 source:/home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/future_net/future_net/route.cpp
 	"route.h"
 	"lib/lib_record.h"
 	<stdio.h>
@@ -64,4 +64,46 @@
 	<sys/timeb.h>
 
 1457924514 /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/future_net/future_net/lib/lib_record.h
+
+1458206059 source:/home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/thread_future_net/future_net/future_net.cpp
+	"route.h"
+	"lib/lib_io.h"
+	"lib/lib_time.h"
+	"stdio.h"
+
+1458205106 /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/thread_future_net/future_net/route.h
+	<iostream>
+	<vector>
+
+1457924514 /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/thread_future_net/future_net/lib/lib_io.h
+
+1457924514 /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/thread_future_net/future_net/lib/lib_time.h
+
+1457924514 source:/home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/thread_future_net/future_net/io.cpp
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+	<time.h>
+	<sys/timeb.h>
+	<errno.h>
+	<unistd.h>
+	<signal.h>
+
+1458206106 source:/home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/thread_future_net/future_net/route.cpp
+	"route.h"
+	"lib/lib_record.h"
+	<stdio.h>
+	<algorithm>
+	<sys/timeb.h>
+	<thread>
+
+1457924514 /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/thread_future_net/future_net/lib/lib_record.h
+
+1458186593 source:/home/zsd/桌面/ThreadTest/main.cpp
+	<iostream>
+	<thread>
+	<mutex>
+	<vector>
+	<unistd.h>
 

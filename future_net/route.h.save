@@ -6,7 +6,7 @@
 
 using namespace std;
 
-con
+const int INF=9999999;
 
 void search_route(char *graph[5000], int edge_num, char *condition);
 
@@ -36,8 +36,8 @@ public:
     PATH();
 };
 
-bool DeepSearch(NODE &node,LINK *link);
-bool StartDeepSearch();
+void ThreadSearch(PATH pathTemp,int nodeID,int linkID);
+void StartThreadSearch(PATH pathTemp);
 bool IsInV(int ID);
 bool CompareLink(const LINK *a,const LINK *b);
 
