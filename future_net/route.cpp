@@ -92,7 +92,6 @@ void search_route(char *topo[5000], int edge_num, char *demand)
         if(demand[i]=='\n') break;
     }
     sort(V.begin(),V.end());
-    //IsInV(543);
 
     if(StartDeepSearch()==false)
     {
@@ -118,94 +117,142 @@ NODE::NODE()
 {
     isVisted=false;
     isSorted=false;
+    cost=INF;
+    isCanReach=false;
 }
 
 PATH::PATH()
 {
-    cost=9999999;
+    cost=INF;
+}
+PATH PATH::operator=(const PATH &b)
+{
+    cost=b.cost;
+    linkIDs=b.linkIDs;
+    nodeIDs=b.nodeIDs;
+    return *this;
 }
 
 bool DeepSearch(NODE &node,LINK *link)
 {
     if(node.isVisted==false)
     {
-        if((pathTemp.cost+link->Cost)<path.cost)
+        if(node.cost==INF)
         {
-            pathTemp.linkIDs.push_back(link->LinkID);
-            pathTemp.nodeIDs.push_back(node.ID);
-            pathTemp.cost+=link->Cost;
-            if(node.ID!=DestinationID)
+            if((pathTemp.cost+link->Cost)<path.cost)
             {
-                node.isVisted=true;
-                bool isFind;
-                isFind=false;
-                if(node.isSorted==false)
+                pathTemp.linkIDs.push_back(link->LinkID);
+                pathTemp.nodeIDs.push_back(node.ID);
+                pathTemp.cost+=link->Cost;
+                if(node.ID!=DestinationID)
                 {
-                    sort(node.nodeLinks.begin(),node.nodeLinks.end(),CompareLink);
-                    node.isSorted=true;
-                }
-                int linkSize;
-                linkSize=node.nodeLinks.size();
-                for(int i=0; i<linkSize; i++)
-                {
-                    if(DeepSearch(nodes[node.nodeLinks[i]->DestinationID],node.nodeLinks[i])==true) isFind=true;
-                }
-                pathTemp.linkIDs.erase(--pathTemp.linkIDs.end());
-                pathTemp.nodeIDs.erase(--pathTemp.nodeIDs.end());
-                pathTemp.cost-=link->Cost;
-                node.isVisted=false;
-                return isFind;
-            }
-            else
-            {
-                bool isVVisted;
-                //isVVisted=false;
-                vector<unsigned short>  pathNodeIDs(pathTemp.nodeIDs.size()-2);
-                copy(pathTemp.nodeIDs.begin()+1,pathTemp.nodeIDs.end()-1,pathNodeIDs.begin());
-                sort(pathNodeIDs.begin(),pathNodeIDs.end());
-                isVVisted=true;
-                for(int i=0;i<(int)V.size();i++){
-                    if(binary_search(pathNodeIDs.begin(),pathNodeIDs.end(),V[i])==false){
-                        isVVisted=false;
-                        break;
-                    }
-                }
-                /*for(int i=0; i<(int)V.size(); i++)
-                {
-                    bool isJVisted;
-                    isJVisted=false;
-                    int nodeSize;
-                    nodeSize=pathTemp.nodeIDs.size();
-                    for(int j=1; j<nodeSize-1; j++)
+                    node.isVisted=true;
+                    bool isFind;
+                    isFind=false;
+                    if(node.isSorted==false)
                     {
-                        if(V[i]==pathTemp.nodeIDs[j])
+                        sort(node.nodeLinks.begin(),node.nodeLinks.end(),CompareLink);
+                        node.isSorted=true;
+                    }
+                    int linkSize;
+                    linkSize=node.nodeLinks.size();
+                    for(int i=0; i<linkSize; i++)
+                    {
+                        if(DeepSearch(nodes[node.nodeLinks[i]->DestinationID],node.nodeLinks[i])==true) isFind=true;
+                    }
+                    if(node.cost<INF)
+                    {
+                        node.isCanReach=true;
+                    }
+                    pathTemp.linkIDs.erase(--pathTemp.linkIDs.end());
+                    pathTemp.nodeIDs.erase(--pathTemp.nodeIDs.end());
+                    pathTemp.cost-=link->Cost;
+                    node.isVisted=false;
+                    return isFind;
+                }
+                else
+                {
+                    bool isVVisted;
+                    vector<unsigned short>  pathNodeIDs(pathTemp.nodeIDs.size()-2);
+                    copy(pathTemp.nodeIDs.begin()+1,pathTemp.nodeIDs.end()-1,pathNodeIDs.begin());
+                    sort(pathNodeIDs.begin(),pathNodeIDs.end());
+                    isVVisted=true;
+                    int VSize;
+                    VSize=V.size();
+                    for(int i=0; i<VSize; i++)
+                    {
+                        if(binary_search(pathNodeIDs.begin(),pathNodeIDs.end(),V[i])==false)
                         {
-                            isJVisted=true;
+                            isVVisted=false;
                             break;
                         }
                     }
-                    if(isJVisted==false) break;
-                    else if(i==(int)(V.size()-1))
+                    if(isVVisted==true)
                     {
-                        isVVisted=true;
-                        break;
+                        path=pathTemp;
                     }
-                }*/
 
-                if(isVVisted==true)
-                {
-                    path=pathTemp;
+                    PATH pathTempCopy;
+                    pathTempCopy=pathTemp;
+                    pathTempCopy.cost-=links[pathTempCopy.linkIDs[0]].Cost;
+                    pathTempCopy.linkIDs.erase(pathTempCopy.linkIDs.begin());
+                    pathTempCopy.nodeIDs.erase(pathTempCopy.nodeIDs.begin());
+                    for(; pathTempCopy.nodeIDs.size()>2;)
+                    {
+                        if(pathTempCopy.cost<nodes[pathTempCopy.nodeIDs[0]].cost)
+                        {
+                            nodes[pathTempCopy.nodeIDs[0]].cost=pathTempCopy.cost;
+                            nodes[pathTempCopy.nodeIDs[0]].linkIDs.resize(pathTempCopy.linkIDs.size());
+                            copy(pathTempCopy.linkIDs.begin(),pathTempCopy.linkIDs.end(),nodes[pathTempCopy.nodeIDs[0]].linkIDs.begin());
+                            nodes[pathTempCopy.nodeIDs[0]].nodeIDs.resize(pathTempCopy.nodeIDs.size());
+                            copy(pathTempCopy.nodeIDs.begin(),pathTempCopy.nodeIDs.end(),nodes[pathTempCopy.nodeIDs[0]].nodeIDs.begin());
+                            //nodes[pathTempCopy.nodeIDs[0]].isCanReach=true;
+                        }
+                        pathTempCopy.cost-=links[pathTempCopy.linkIDs[0]].Cost;
+                        pathTempCopy.linkIDs.erase(pathTempCopy.linkIDs.begin());
+                        pathTempCopy.nodeIDs.erase(pathTempCopy.nodeIDs.begin());
+                    }
+
+                    pathTemp.linkIDs.erase(--pathTemp.linkIDs.end());
+                    pathTemp.nodeIDs.erase(--pathTemp.nodeIDs.end());
+                    pathTemp.cost-=link->Cost;
+                    node.isVisted=false;
+                    return isVVisted;
                 }
-                pathTemp.linkIDs.erase(--pathTemp.linkIDs.end());
-                pathTemp.nodeIDs.erase(--pathTemp.nodeIDs.end());
-                pathTemp.cost-=link->Cost;
-                node.isVisted=false;
-                return isVVisted;
+            }
+            else
+            {
+                return false;
             }
         }
         else
         {
-            return false;
+            if(node.isCanReach==true)
+            {
+                if((pathTemp.cost+link->Cost+node.cost)<path.cost)
+                {
+                    pathTemp.cost=pathTemp.cost+link->Cost+node.cost;
+                    pathTemp.linkIDs.push_back(link->LinkID);
+                    vector<int>::iterator it;
+                    it=pathTemp.linkIDs.end();
+                    pathTemp.linkIDs.resize(pathTemp.linkIDs.size()+node.linkIDs.size());
+                    copy(node.linkIDs.begin(),node.linkIDs.end(),it);
+                    vector<unsigned short>::iterator itt;
+                    itt=pathTemp.nodeIDs.end();
+                    pathTemp.nodeIDs.resize(pathTemp.nodeIDs.size()+node.nodeIDs.size());
+                    copy(node.nodeIDs.begin(),node.nodeIDs.end(),itt);
+                    path=pathTemp;
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
         }
     }
     else

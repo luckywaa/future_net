@@ -28,7 +28,6 @@ public:
     bool isSorted;
     int cost;
     vector<int> linkIDs;
-    vector<unsigned short> nodeIDs;
     bool isCanReach;
 };
 class PATH
