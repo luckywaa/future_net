@@ -1,7 +1,7 @@
-#define NDEBUG
+//#define NDEBUG
 //#define NDEBUG1
 #define DEADLINEMS 930//930
-#define DEADLINES 9999999//9
+#define DEADLINES 9//9
 
 #include "route.h"
 #include "lib/lib_record.h"
@@ -103,7 +103,7 @@ void search_route(char *topo[5000], int edge_num, char *demand)
                 break;
             }
         }
-        if(demand[i]=='\n') break;
+        if(demand[i]=='\n' ||) break;
     }
     sort(V.begin(),V.end());
 
