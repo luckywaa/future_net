@@ -43,10 +43,10 @@ RM = /usr/local/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/future_net/future_net
+CMAKE_SOURCE_DIR = /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/route_future_net/future_net
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/future_net/build
+CMAKE_BINARY_DIR = /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/route_future_net/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/future_net.dir/depend.make
@@ -58,17 +58,17 @@ include CMakeFiles/future_net.dir/progress.make
 include CMakeFiles/future_net.dir/flags.make
 
 CMakeFiles/future_net.dir/future_net.cpp.o: CMakeFiles/future_net.dir/flags.make
-CMakeFiles/future_net.dir/future_net.cpp.o: /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/future_net/future_net/future_net.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/future_net/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/future_net.dir/future_net.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/future_net.dir/future_net.cpp.o -c /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/future_net/future_net/future_net.cpp
+CMakeFiles/future_net.dir/future_net.cpp.o: /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/route_future_net/future_net/future_net.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/route_future_net/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/future_net.dir/future_net.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/future_net.dir/future_net.cpp.o -c /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/route_future_net/future_net/future_net.cpp
 
 CMakeFiles/future_net.dir/future_net.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/future_net.dir/future_net.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/future_net/future_net/future_net.cpp > CMakeFiles/future_net.dir/future_net.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/route_future_net/future_net/future_net.cpp > CMakeFiles/future_net.dir/future_net.cpp.i
 
 CMakeFiles/future_net.dir/future_net.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/future_net.dir/future_net.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/future_net/future_net/future_net.cpp -o CMakeFiles/future_net.dir/future_net.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/route_future_net/future_net/future_net.cpp -o CMakeFiles/future_net.dir/future_net.cpp.s
 
 CMakeFiles/future_net.dir/future_net.cpp.o.requires:
 
@@ -82,17 +82,17 @@ CMakeFiles/future_net.dir/future_net.cpp.o.provides.build: CMakeFiles/future_net
 
 
 CMakeFiles/future_net.dir/route.cpp.o: CMakeFiles/future_net.dir/flags.make
-CMakeFiles/future_net.dir/route.cpp.o: /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/future_net/future_net/route.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/future_net/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/future_net.dir/route.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/future_net.dir/route.cpp.o -c /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/future_net/future_net/route.cpp
+CMakeFiles/future_net.dir/route.cpp.o: /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/route_future_net/future_net/route.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/route_future_net/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/future_net.dir/route.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/future_net.dir/route.cpp.o -c /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/route_future_net/future_net/route.cpp
 
 CMakeFiles/future_net.dir/route.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/future_net.dir/route.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/future_net/future_net/route.cpp > CMakeFiles/future_net.dir/route.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/route_future_net/future_net/route.cpp > CMakeFiles/future_net.dir/route.cpp.i
 
 CMakeFiles/future_net.dir/route.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/future_net.dir/route.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/future_net/future_net/route.cpp -o CMakeFiles/future_net.dir/route.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/route_future_net/future_net/route.cpp -o CMakeFiles/future_net.dir/route.cpp.s
 
 CMakeFiles/future_net.dir/route.cpp.o.requires:
 
@@ -106,17 +106,17 @@ CMakeFiles/future_net.dir/route.cpp.o.provides.build: CMakeFiles/future_net.dir/
 
 
 CMakeFiles/future_net.dir/io.cpp.o: CMakeFiles/future_net.dir/flags.make
-CMakeFiles/future_net.dir/io.cpp.o: /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/future_net/future_net/io.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/future_net/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/future_net.dir/io.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/future_net.dir/io.cpp.o -c /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/future_net/future_net/io.cpp
+CMakeFiles/future_net.dir/io.cpp.o: /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/route_future_net/future_net/io.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/route_future_net/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/future_net.dir/io.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/future_net.dir/io.cpp.o -c /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/route_future_net/future_net/io.cpp
 
 CMakeFiles/future_net.dir/io.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/future_net.dir/io.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/future_net/future_net/io.cpp > CMakeFiles/future_net.dir/io.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/route_future_net/future_net/io.cpp > CMakeFiles/future_net.dir/io.cpp.i
 
 CMakeFiles/future_net.dir/io.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/future_net.dir/io.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/future_net/future_net/io.cpp -o CMakeFiles/future_net.dir/io.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/route_future_net/future_net/io.cpp -o CMakeFiles/future_net.dir/io.cpp.s
 
 CMakeFiles/future_net.dir/io.cpp.o.requires:
 
@@ -138,16 +138,16 @@ future_net_OBJECTS = \
 # External object files for target future_net
 future_net_EXTERNAL_OBJECTS =
 
-/home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/future_net/bin/future_net: CMakeFiles/future_net.dir/future_net.cpp.o
-/home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/future_net/bin/future_net: CMakeFiles/future_net.dir/route.cpp.o
-/home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/future_net/bin/future_net: CMakeFiles/future_net.dir/io.cpp.o
-/home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/future_net/bin/future_net: CMakeFiles/future_net.dir/build.make
-/home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/future_net/bin/future_net: CMakeFiles/future_net.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/future_net/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/future_net/bin/future_net"
+/home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/route_future_net/bin/future_net: CMakeFiles/future_net.dir/future_net.cpp.o
+/home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/route_future_net/bin/future_net: CMakeFiles/future_net.dir/route.cpp.o
+/home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/route_future_net/bin/future_net: CMakeFiles/future_net.dir/io.cpp.o
+/home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/route_future_net/bin/future_net: CMakeFiles/future_net.dir/build.make
+/home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/route_future_net/bin/future_net: CMakeFiles/future_net.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/route_future_net/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/route_future_net/bin/future_net"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/future_net.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/future_net.dir/build: /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/future_net/bin/future_net
+CMakeFiles/future_net.dir/build: /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/route_future_net/bin/future_net
 
 .PHONY : CMakeFiles/future_net.dir/build
 
@@ -162,6 +162,6 @@ CMakeFiles/future_net.dir/clean:
 .PHONY : CMakeFiles/future_net.dir/clean
 
 CMakeFiles/future_net.dir/depend:
-	cd /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/future_net/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/future_net/future_net /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/future_net/future_net /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/future_net/build /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/future_net/build /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/future_net/build/CMakeFiles/future_net.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/route_future_net/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/route_future_net/future_net /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/route_future_net/future_net /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/route_future_net/build /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/route_future_net/build /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/route_future_net/build/CMakeFiles/future_net.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/future_net.dir/depend
 

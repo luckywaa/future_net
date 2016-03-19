@@ -6,7 +6,8 @@
 
 using namespace std;
 
-const int INF=9999999;
+const int INF=999999;
+const int NODESNUM=700;
 
 void search_route(char *graph[5000], int edge_num, char *condition);
 
@@ -34,17 +35,21 @@ public:
     int cost;
     vector<unsigned short> nodeIDs;
     PATH();
+    vector<unsigned short> sortedNodeIDs;
 };
 
-bool DeepSearch(NODE &node,LINK *link);
-bool StartDeepSearch();
 bool IsInV(int ID);
 bool CompareLink(const LINK *a,const LINK *b);
+void Floyd();
+bool RouteSearch(PATH pathTemp,LINK link);
+bool StartRouteSearch();
+int SearchInterface(int sourceNodeID,int destinationNodeID);
 
 #ifndef NDEBUG
 void PrintTime();
 #endif // NDEBUG
 
 void StartTime();
+
 
 #endif

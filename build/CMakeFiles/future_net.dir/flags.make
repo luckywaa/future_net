@@ -6,5 +6,5 @@ CXX_FLAGS =  -O0 -Wall -g -ggdb
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/future_net/future_net/lib 
+CXX_INCLUDES = -I/home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/route_future_net/future_net/lib 
 
