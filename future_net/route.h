@@ -43,7 +43,7 @@ bool CompareLink(const LINK *a,const LINK *b);
 void Floyd();
 bool RouteSearch(PATH pathTemp,LINK link);
 bool StartRouteSearch();
-int SearchInterface(int sourceNodeID,int destinationNodeID);
+int SearchInterface(int sourceNodeID,int destinationNodeID,vector<unsigned short> sortedNodeIDs);
 
 #ifndef NDEBUG
 void PrintTime();

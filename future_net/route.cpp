@@ -1,7 +1,8 @@
 #define NDEBUG
-#define NDEBUG1
-#define DEADLINEMS 970//930
-#define DEADLINES 9//9
+//#define NDEBUG1
+#define NDEBUGPATH
+#define DEADLINEMS 500//930
+#define DEADLINES 999999//9
 
 #include "route.h"
 #include "lib/lib_record.h"
@@ -99,7 +100,7 @@ void search_route(char *topo[5000], int edge_num, char *demand)
         if((int)links.size()==edge_num) break;
     }
 
-    Floyd();
+    //Floyd();
     //cout<<SearchInterface(0,14)<<endl;
 
     for(int i=0,num=0,countNum=0; ; i++) //input demand
@@ -138,7 +139,7 @@ void search_route(char *topo[5000], int edge_num, char *demand)
 
     if(StartRouteSearch()==false)
     {
-        //cout<<"NA"<<endl;
+        cout<<"NA"<<endl;
     }
     else
     {
@@ -181,7 +182,9 @@ bool RouteSearch(PATH pathTemp,LINK link)
         out_ms += 1000;
         out_s -= 1;
     }
-    if(out_s==DEADLINES && out_ms>DEADLINEMS){
+    //cout<<out_s<<"  "<<out_ms<<endl;
+    if((out_s==DEADLINES && out_ms>DEADLINEMS)||(out_s>DEADLINES))
+    {
         if(path.cost<INF) return true;
         else return false;
     }
@@ -193,13 +196,17 @@ bool RouteSearch(PATH pathTemp,LINK link)
             {
                 int VSize;
                 VSize=V.size();
-                for(int i=0;i<VSize;i++){
+                for(int i=0; i<VSize; i++)
+                {
                     if(binary_search(pathTemp.sortedNodeIDs.begin(),pathTemp.sortedNodeIDs.end(),V[i])==false) return false;
                 }
                 pathTemp.cost+=link.Cost;
                 pathTemp.linkIDs.push_back(link.LinkID);
                 pathTemp.nodeIDs.push_back(link.DestinationID);
                 path=pathTemp;
+#ifndef NDEBUG1
+                cout<<endl<<"cost: "<<path.cost<<"    s: "<<out_s<<"  ms: "<<out_ms<<endl;
+#endif // NDEBUG1
                 return true;
             }
             else
@@ -217,7 +224,7 @@ bool RouteSearch(PATH pathTemp,LINK link)
                     if(binary_search(pathTemp.sortedNodeIDs.begin(),pathTemp.sortedNodeIDs.end(),V[i])==false)
                     {
                         int interface;
-                        interface=SearchInterface(link.DestinationID,V[i]);//查看返回的interface到底应该怎么用？？？？？？？？？？？？？？？？？？？？？？？？？
+                        interface=SearchInterface(link.DestinationID,V[i],pathTemp.sortedNodeIDs);//查看返回的interface到底应该怎么用？？？？？？？？？？？？？？？？？？？？？？？？？
                         if(interface==-1) return false;
                         if(binary_search(interfaces.begin(),interfaces.end(),interface)==false)
                         {
@@ -229,7 +236,7 @@ bool RouteSearch(PATH pathTemp,LINK link)
                 if(interfaces.size()==0)
                 {
                     int interface;
-                    interface=SearchInterface(link.DestinationID,DestinationID);
+                    interface=SearchInterface(link.DestinationID,DestinationID,pathTemp.sortedNodeIDs);
                     if(interface==-1) return false;
                     interfaces.push_back(interface);
                 }
@@ -276,7 +283,7 @@ bool StartRouteSearch()
     for(int i=0; i<VSize; i++)
     {
         int interface;
-        interface=SearchInterface(SourceID,V[i]);
+        interface=SearchInterface(SourceID,V[i],pathTemp.sortedNodeIDs);
         if(interface==-1) return false;
         if(binary_search(interfaces.begin(),interfaces.end(),interface)==false)
         {
@@ -375,21 +382,169 @@ void Floyd()
     }
 }
 
-int SearchInterface(int sourceNodeID,int destinationNodeID)
+int SearchInterface(int sourceNodeID,int destinationNodeID,vector<unsigned short> sortedNodeIDs)
 {
-    if(PATHD[sourceNodeID][destinationNodeID]==-1) return -1;
+    int nodeIDsSize;
+    nodeIDsSize=allNodeIDs.size();
+    int d[NODESNUM],pathd[NODESNUM][NODESNUM];
+    bool final[NODESNUM];//若final[i] = 1则说明 顶点vi已在集合S中
+    memset(d,INF,NODESNUM*sizeof(int));
+    memset(pathd,-1,NODESNUM*NODESNUM*sizeof(int));//设空路径
+    memset(final,false,NODESNUM*sizeof(int));
+    for(int i=0; i<nodeIDsSize; i++)//循环 初始化
+    {
+        d[allNodeIDs[i]]=D[sourceNodeID][allNodeIDs[i]];
+        if(d[allNodeIDs[i]]<INF && allNodeIDs[i]!=sourceNodeID)
+        {
+            pathd[sourceNodeID][allNodeIDs[i]]=sourceNodeID;
+        }
+    }
+    d[sourceNodeID]=0;
+    final[sourceNodeID]=true;//初始化 v0顶点属于集合S
+    int sortedNodeSize;
+    sortedNodeSize=sortedNodeIDs.size();
+    for(int i=0; i<sortedNodeSize; i++)
+    {
+        final[sortedNodeIDs[i]]=true;
+    }
+
+
+    //开始主循环 每次求得v0到某个顶点v的最短路径 并加v到集合S中
+    for (int i = 1; i < nodeIDsSize; i++)//求n-1条最短路径
+    {
+        //选点
+        int min;
+        min=INF;
+        int k;
+        k=-1;
+        for (int w = 1; w < nodeIDsSize; w++)
+        {
+            if (final[allNodeIDs[w]]==false && d[allNodeIDs[w]]<min) //如果w顶点在V-S中
+            {
+                //这个过程最终选出的点 应该是选出当前V-S中与S有关联边
+                //且权值最小的顶点 书上描述为 当前离V0最近的点
+                min=d[allNodeIDs[w]];
+                k=w;
+            }
+        }
+        final[allNodeIDs[k]]=true;//选出该点后加入到合集S中
+        for (int j = 0; j < nodeIDsSize; j++)//更新当前最短路径和距离
+        {
+            /*在此循环中 v为当前刚选入集合S中的点
+            则以点V为中间点 考察 d0v+dvw 是否小于 D[w] 如果小于 则更新
+            比如加进点 3 则若要考察 D[5] 是否要更新 就 判断 d(v0-v3) + d(v3-v5) 的和是否小于D[5]
+            */
+            if (final[allNodeIDs[j]]==false && (d[allNodeIDs[k]]+D[allNodeIDs[k]][allNodeIDs[j]]<d[allNodeIDs[j]]))
+            {
+                d[allNodeIDs[j]] = d[allNodeIDs[k]] + D[allNodeIDs[k]][allNodeIDs[j]];
+                pathd[sourceNodeID][allNodeIDs[j]] = allNodeIDs[k];
+            }
+        }
+    }
+
+    if(pathd[sourceNodeID][destinationNodeID]==-1) return -1;
     int next;
-    next=PATHD[sourceNodeID][destinationNodeID];
+    next=pathd[sourceNodeID][destinationNodeID];
     if(next==sourceNodeID)
     {
         next=destinationNodeID;
     }
     else
     {
-        while(PATHD[sourceNodeID][next]!=sourceNodeID)
+        while(pathd[sourceNodeID][next]!=sourceNodeID)
         {
-            next=PATHD[sourceNodeID][next];
+            next=pathd[sourceNodeID][next];
         }
     }
     return next;
+
+
+    /*for(int k=0; k<nodeIDsSize; k++)
+    {
+        if(binary_search(sortedNodeIDs.begin(),sortedNodeIDs.end(),allNodeIDs[k])==true) continue;
+        for(int j=0; j<nodeIDsSize; j++)
+        {
+            if((d[sourceNodeID][allNodeIDs[k]]+d[allNodeIDs[k]][allNodeIDs[j]])<d[sourceNodeID][allNodeIDs[j]])
+            {
+                d[sourceNodeID][allNodeIDs[j]]=d[sourceNodeID][allNodeIDs[k]]+d[allNodeIDs[k]][allNodeIDs[j]];
+                pathd[sourceNodeID][allNodeIDs[j]]=pathd[allNodeIDs[k]][allNodeIDs[j]];
+                //pathd[sourceNodeID][allNodeIDs[j]]=allNodeIDs[k];
+            }
+        }
+    }*/
+
+    /*
+        if(PATHD[sourceNodeID][destinationNodeID]==-1) return -1;
+        int next;
+        bool isReturn;
+        isReturn=true;
+        next=PATHD[sourceNodeID][destinationNodeID];
+        if(next==sourceNodeID)
+        {
+            next=destinationNodeID;
+        }
+        else
+        {
+            while(PATHD[sourceNodeID][next]!=sourceNodeID)
+            {
+                if(binary_search(sortedNodeIDs.begin(),sortedNodeIDs.end(),next)==true)
+                {
+                    isReturn=false;
+                    break;
+                }
+                next=PATHD[sourceNodeID][next];
+            }
+        }
+        if(isReturn==true)
+        {
+            return next;
+        }
+        else
+        {
+            int nodeIDsSize;
+            nodeIDsSize=allNodeIDs.size();
+            int d[NODESNUM][NODESNUM],pathd[NODESNUM][NODESNUM];
+            memset(d,INF,NODESNUM*NODESNUM*sizeof(int));
+            memset(pathd,-1,NODESNUM*NODESNUM*sizeof(int));
+            for(int i=0; i<nodeIDsSize; i++)
+            {
+                for(int j=0; j<nodeIDsSize; j++)
+                {
+                    d[allNodeIDs[i]][allNodeIDs[j]]=D[allNodeIDs[i]][allNodeIDs[j]];
+                    pathd[allNodeIDs[i]][allNodeIDs[j]]=PATHD[allNodeIDs[i]][allNodeIDs[j]];
+                }
+            }
+            for(int k=0; k<nodeIDsSize; k++)
+            {
+                if(binary_search(sortedNodeIDs.begin(),sortedNodeIDs.end(),allNodeIDs[k])==true) continue;
+                for(int i=0; i<nodeIDsSize; i++)
+                {
+                    for(int j=0; j<nodeIDsSize; j++)
+                    {
+                        if((d[allNodeIDs[i]][allNodeIDs[k]]+d[allNodeIDs[k]][allNodeIDs[j]])<d[allNodeIDs[i]][allNodeIDs[j]])
+                        {
+                            d[allNodeIDs[i]][allNodeIDs[j]]=d[allNodeIDs[i]][allNodeIDs[k]]+d[allNodeIDs[k]][allNodeIDs[j]];
+                            pathd[allNodeIDs[i]][allNodeIDs[j]]=pathd[allNodeIDs[k]][allNodeIDs[j]];
+                        }
+                    }
+                }
+            }
+
+            if(pathd[sourceNodeID][destinationNodeID]==-1) return -1;
+            int next;
+            next=pathd[sourceNodeID][destinationNodeID];
+            if(next==sourceNodeID)
+            {
+                next=destinationNodeID;
+            }
+            else
+            {
+                while(pathd[sourceNodeID][next]!=sourceNodeID)
+                {
+                    next=pathd[sourceNodeID][next];
+                }
+            }
+            return next;
+        }*/
+
 }
