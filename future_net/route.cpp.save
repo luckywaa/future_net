@@ -1,7 +1,10 @@
 #define NDEBUG
-//#define NDEBUG1
+#define NDEBUG1
 #define NDEBUGPATH
-#define DEADLINEMS 500//930
+#define NDEBUGPATH1
+#define NDEBUGINTERFACE
+
+#define DEADLINEMS 930//930
 #define DEADLINES 9//9
 
 #include "route.h"
@@ -10,6 +13,8 @@
 #include <algorithm>
 #include <sys/timeb.h>
 #include <memory.h>
+#include <string>
+//#include <queue>
 
 PATH path;
 vector<LINK> links;
@@ -34,70 +39,30 @@ void search_route(char *topo[5000], int edge_num, char *demand)
     PrintTime();
 #endif // NDEBUG
 
-    for(int i=0;; i++)//input topo[
+    for(int i=0; i<edge_num; i++)
     {
-        int num,countNum;
-        num=0;
-        countNum=0;
-        for(int j=0;; j++)
+        link=new LINK;
+        sscanf(topo[i],"%d,%d,%d,%d",&link->LinkID,&link->SourceID,&link->DestinationID,&link->Cost);
+        links.push_back(*link);
+        nodes[link->SourceID].nodeLinks.push_back(link);
+        nodes[link->SourceID].ID=link->SourceID;
+        nodes[link->DestinationID].ID=link->DestinationID;
+        if(binary_search(allNodeIDs.begin(),allNodeIDs.end(),link->SourceID)==false)
         {
-            if(topo[i][j]>='0' && topo[i][j]<='9')
-            {
-                num=num*10+topo[i][j]-'0';
-            }
-            else
-            {
-                switch(countNum)
-                {
-                case 0:
-                    link=new LINK;
-                    link->LinkID=num;
-                    num=0;
-                    countNum++;
-                    break;
-                case 1:
-                    link->SourceID=num;
-                    num=0;
-                    countNum++;
-                    break;
-                case 2:
-                    link->DestinationID=num;
-                    num=0;
-                    countNum++;
-                    break;
-                case 3:
-                    link->Cost=num;
-                    num=0;
-                    countNum=0;
-                    links.push_back(*link);
-                    nodes[link->SourceID].nodeLinks.push_back(link);
-                    nodes[link->SourceID].ID=link->SourceID;
-                    nodes[link->DestinationID].ID=link->DestinationID;
-                    if(binary_search(allNodeIDs.begin(),allNodeIDs.end(),link->SourceID)==false)
-                    {
-                        allNodeIDs.push_back(link->SourceID);
-                        sort(allNodeIDs.begin(),allNodeIDs.end());
-                    }
-                    if(binary_search(allNodeIDs.begin(),allNodeIDs.end(),link->DestinationID)==false)
-                    {
-                        allNodeIDs.push_back(link->DestinationID);
-                        sort(allNodeIDs.begin(),allNodeIDs.end());
-                    }
-                    if(link->Cost<D[link->SourceID][link->DestinationID]) //生成Floyd算法的两个二位数组
-                    {
-                        D[link->SourceID][link->DestinationID]=link->Cost;
-                        D[link->SourceID][link->SourceID]=0;
-                        PATHD[link->SourceID][link->DestinationID]=link->SourceID;
-                    }
-                    break;
-                }
-                if(countNum==0)
-                {
-                    break;
-                }
-            }
+            allNodeIDs.push_back(link->SourceID);
+            sort(allNodeIDs.begin(),allNodeIDs.end());
         }
-        if((int)links.size()==edge_num) break;
+        if(binary_search(allNodeIDs.begin(),allNodeIDs.end(),link->DestinationID)==false)
+        {
+            allNodeIDs.push_back(link->DestinationID);
+            sort(allNodeIDs.begin(),allNodeIDs.end());
+        }
+        if(link->Cost<D[link->SourceID][link->DestinationID]) //生成Floyd算法的两个二位数组
+        {
+            D[link->SourceID][link->DestinationID]=link->Cost;
+            D[link->SourceID][link->SourceID]=0;
+            PATHD[link->SourceID][link->DestinationID]=link->SourceID;
+        }
     }
 
     //Floyd();
@@ -137,7 +102,11 @@ void search_route(char *topo[5000], int edge_num, char *demand)
     PrintTime();
 #endif // NDEBUG
 
-    if(StartRouteSearch()==false)
+    PATH pathTemp;
+    pathTemp.cost=0;
+    pathTemp.nodeIDs.push_back(SourceID);
+
+    if(StartRouteSearch(pathTemp)==false)
     {
         cout<<"NA"<<endl;
     }
@@ -173,7 +142,7 @@ PATH::PATH()
 
 bool RouteSearch(PATH pathTemp,LINK link)
 {
-    struct timeb rawtime;
+    /*struct timeb rawtime;
     ftime(&rawtime);
     int out_ms = rawtime.millitm - msStart;
     unsigned long out_s = rawtime.time - sStart;
@@ -204,8 +173,9 @@ bool RouteSearch(PATH pathTemp,LINK link)
                 pathTemp.linkIDs.push_back(link.LinkID);
                 pathTemp.nodeIDs.push_back(link.DestinationID);
                 path=pathTemp;
-                #ifndef NDEBUG1
-                cout<<"cost: "<<path.cost<<"    s: "<<out_s<<"  "<<out_ms<<endl;
+    #ifndef NDEBUG1
+                cout<<endl<<"cost: "<<path.cost<<"    s: "<<out_s<<"  ms: "<<out_ms<<endl;
+    #endif // NDEBUG1
                 return true;
             }
             else
@@ -267,33 +237,146 @@ bool RouteSearch(PATH pathTemp,LINK link)
             }
         }
     }
-    return false;
+    return false;*/
+    return true;
 }
 
-bool StartRouteSearch()
+bool StartRouteSearch(PATH pathTemp)
 {
-    PATH pathTemp;
+    /*PATH pathTemp;
     pathTemp.cost=0;
-    pathTemp.nodeIDs.push_back(SourceID);
+    pathTemp.nodeIDs.push_back(SourceID);*/
 
-    vector<int> interfaces;
-    int VSize;
-    VSize=V.size();
-    for(int i=0; i<VSize; i++)
+    struct timeb rawtime;
+    ftime(&rawtime);
+    int out_ms = rawtime.millitm - msStart;
+    unsigned long out_s = rawtime.time - sStart;
+    if (out_ms < 0)
     {
-        int interface;
-        interface=SearchInterface(SourceID,V[i],pathTemp.sortedNodeIDs);
-        if(interface==-1) return false;
-        if(binary_search(interfaces.begin(),interfaces.end(),interface)==false)
-        {
-            interfaces.push_back(interface);
-            sort(interfaces.begin(),interfaces.end());
-        }
+        out_ms += 1000;
+        out_s -= 1;
+    }
+    //cout<<out_s<<"  "<<out_ms<<endl;
+    if((out_s==DEADLINES && out_ms>DEADLINEMS)||(out_s>DEADLINES))
+    {
+        if(path.cost<INF) return true;
+        else return false;
     }
 
-    bool isReach;
-    isReach=false;
-    int InterfacesSize;
+    vector<int> interfaces;
+    bool isReach=false,isVReach=false;
+    int VSize=V.size();
+    for(int i=0; i<VSize; i++)
+    {
+        if(binary_search(pathTemp.sortedNodeIDs.begin(),pathTemp.sortedNodeIDs.end(),V[i])==false)
+        {
+#ifndef NDEBUGPATH1
+            cout<<V[i]<<" is OK"<<endl;
+            cout<<"before LINKS:";
+            for(int ndp=0; ndp<pathTemp.linkIDs.size(); ndp++)
+            {
+                cout<<pathTemp.linkIDs[ndp]<<"-->";
+            }
+            cout<<endl;
+            cout<<"before NODES:";
+            for(int ndp=0; ndp<pathTemp.nodeIDs.size(); ndp++)
+            {
+                cout<<pathTemp.nodeIDs[ndp]<<"-->";
+            }
+            cout<<endl;
+#endif // NDEBUGPATH1
+            isVReach=true;
+            vector<int> interface;
+            interface=SearchInterface(pathTemp.nodeIDs[pathTemp.nodeIDs.size()-1],V[i],pathTemp.sortedNodeIDs);
+            if(interface[0]==-1) return false;
+            PATH myPathTemp=pathTemp;
+            int iInterfaceSize=interface.size();
+#ifndef NDEBUGPATH1
+            cout<<"interface:";
+#endif // NDEBUGPATH1
+            for(int j=iInterfaceSize-1; j>-1; j--)
+            {
+#ifndef NDEBUGPATH1
+                cout<<interface[j]<<" ";
+#endif // NDEBUGPATH1
+                int linkID=SearchLinkID(myPathTemp.nodeIDs[myPathTemp.nodeIDs.size()-1],interface[interface.size()-1]);
+                myPathTemp.linkIDs.push_back(linkID);
+                myPathTemp.cost+=links[linkID].Cost;
+                if(myPathTemp.cost>path.cost) return false;
+                myPathTemp.nodeIDs.push_back(interface[interface.size()-1]);
+                myPathTemp.sortedNodeIDs.push_back(interface[interface.size()-1]);
+                interface.pop_back();
+            }
+#ifndef NDEBUGPATH1
+            cout<<endl;
+#endif // NDEBUGPATH1
+            if(myPathTemp.nodeIDs[myPathTemp.nodeIDs.size()-1]!=V[i])
+            {
+                int linkID=SearchLinkID(myPathTemp.nodeIDs[myPathTemp.nodeIDs.size()-1],V[i]);
+                myPathTemp.linkIDs.push_back(linkID);
+                myPathTemp.cost+=links[linkID].Cost;
+                if(myPathTemp.cost>path.cost) return false;
+                myPathTemp.nodeIDs.push_back(V[i]);
+                myPathTemp.sortedNodeIDs.push_back(V[i]);
+            }
+            sort(myPathTemp.sortedNodeIDs.begin(),myPathTemp.sortedNodeIDs.end());
+#ifndef NDEBUGPATH1
+            cout<<"after  LINKS:";
+            for(int ndp=0; ndp<myPathTemp.linkIDs.size(); ndp++)
+            {
+                cout<<myPathTemp.linkIDs[ndp]<<"-->";
+            }
+            cout<<endl;
+            cout<<"after  NODES:";
+            for(int ndp=0; ndp<myPathTemp.nodeIDs.size(); ndp++)
+            {
+                cout<<myPathTemp.nodeIDs[ndp]<<"-->";
+            }
+            cout<<endl<<endl;
+#endif // NDEBUGPATH1
+            bool isReachTemp= StartRouteSearch(myPathTemp);
+            if(isReach==false && isReachTemp==true) isReach=true;
+        }
+        else
+        {
+#ifndef NDEBUGPATH1
+            cout<<V[i]<<" is OUT"<<endl;
+#endif // NDEBUGPATH1
+        }
+    }
+    if(isVReach==false)
+    {
+        vector<int> interface;
+        interface=SearchInterface(pathTemp.nodeIDs[pathTemp.nodeIDs.size()-1],DestinationID,pathTemp.sortedNodeIDs);
+        if(interface[0]==-1) return false;
+        int iInterfaceSize=interface.size();
+        for(int j=iInterfaceSize-1; j>-1; j--)
+        {
+            int linkID=SearchLinkID(pathTemp.nodeIDs[pathTemp.nodeIDs.size()-1],interface[interface.size()-1]);
+            pathTemp.linkIDs.push_back(linkID);
+            pathTemp.cost+=links[linkID].Cost;
+            pathTemp.nodeIDs.push_back(interface[interface.size()-1]);
+            interface.pop_back();
+        }
+        if(pathTemp.nodeIDs[pathTemp.nodeIDs.size()-1]!=DestinationID)
+            {
+                int linkID=SearchLinkID(pathTemp.nodeIDs[pathTemp.nodeIDs.size()-1],DestinationID);
+                pathTemp.linkIDs.push_back(linkID);
+                pathTemp.cost+=links[linkID].Cost;
+                if(pathTemp.cost>path.cost) return false;
+                pathTemp.nodeIDs.push_back(DestinationID);
+            }
+        if(pathTemp.cost<path.cost)
+        {
+            path=pathTemp;
+            return true;
+        }
+        else return false;
+    }
+    return isReach;
+
+
+    /*int InterfacesSize;
     InterfacesSize=interfaces.size();
     for(int i=0; i<InterfacesSize; i++)
     {
@@ -316,7 +399,25 @@ bool StartRouteSearch()
         if(RouteSearch(pathTemp,links[linkID])==true) isReach=true;
     }
 
-    return isReach;
+    return isReach;*/
+}
+
+int SearchLinkID(int iSourceID,int iDestinationID)
+{
+    int linkID=-1,cost=INF;
+    int NodeLinksSize=nodes[iSourceID].nodeLinks.size();
+    for(int j=0; j<NodeLinksSize; j++)
+    {
+        if(nodes[iSourceID].nodeLinks[j]->DestinationID==iDestinationID)
+        {
+            if(nodes[iSourceID].nodeLinks[j]->Cost<cost)
+            {
+                linkID=nodes[iSourceID].nodeLinks[j]->LinkID;
+                cost=nodes[iSourceID].nodeLinks[j]->Cost;
+            }
+        }
+    }
+    return linkID;
 }
 
 bool IsInV(int ID)
@@ -381,8 +482,11 @@ void Floyd()
     }
 }
 
-int SearchInterface(int sourceNodeID,int destinationNodeID,vector<unsigned short> sortedNodeIDs)
+vector<int> SearchInterface(int sourceNodeID,int destinationNodeID,vector<unsigned short> sortedNodeIDs)
 {
+#ifndef  NDEBUGINTERFACE
+    cout<<"start0 searchinterface"<<endl;
+#endif // NDEBUGINTERFACE
     int nodeIDsSize;
     nodeIDsSize=allNodeIDs.size();
     int d[NODESNUM],pathd[NODESNUM][NODESNUM];
@@ -390,6 +494,9 @@ int SearchInterface(int sourceNodeID,int destinationNodeID,vector<unsigned short
     memset(d,INF,NODESNUM*sizeof(int));
     memset(pathd,-1,NODESNUM*NODESNUM*sizeof(int));//设空路径
     memset(final,false,NODESNUM*sizeof(int));
+#ifndef  NDEBUGINTERFACE
+    cout<<"start1"<<endl;
+#endif // NDEBUGINTERFACE
     for(int i=0; i<nodeIDsSize; i++)//循环 初始化
     {
         d[allNodeIDs[i]]=D[sourceNodeID][allNodeIDs[i]];
@@ -406,7 +513,9 @@ int SearchInterface(int sourceNodeID,int destinationNodeID,vector<unsigned short
     {
         final[sortedNodeIDs[i]]=true;
     }
-
+#ifndef  NDEBUGINTERFACE
+    cout<<"start2"<<endl;
+#endif // NDEBUGINTERFACE
 
     //开始主循环 每次求得v0到某个顶点v的最短路径 并加v到集合S中
     for (int i = 1; i < nodeIDsSize; i++)//求n-1条最短路径
@@ -440,110 +549,51 @@ int SearchInterface(int sourceNodeID,int destinationNodeID,vector<unsigned short
             }
         }
     }
-
-    if(pathd[sourceNodeID][destinationNodeID]==-1) return -1;
-    int next;
-    next=pathd[sourceNodeID][destinationNodeID];
-    if(next==sourceNodeID)
+#ifndef  NDEBUGINTERFACE
+    cout<<"start3"<<endl;
+#endif // NDEBUGINTERFACE
+    vector<int> next;
+#ifndef  NDEBUGINTERFACE
+    cout<<"start4  "<<"sourceNodeID="<<sourceNodeID<<" destinationNodeID="<<destinationNodeID<<endl;
+#endif // NDEBUGINTERFACE
+    if(pathd[sourceNodeID][destinationNodeID]==-1)
     {
-        next=destinationNodeID;
+        next.push_back(-1);
+        return next;
+    }
+#ifndef  NDEBUGINTERFACE
+    cout<<"start5"<<endl;
+#endif // NDEBUGINTERFACE
+    //next=pathd[sourceNodeID][destinationNodeID];
+    next.push_back(pathd[sourceNodeID][destinationNodeID]);
+#ifndef  NDEBUGINTERFACE
+    cout<<"start6"<<endl;
+#endif // NDEBUGINTERFACE
+    //if(next==sourceNodeID)
+    if(next[0]==sourceNodeID)
+    {
+        //next=destinationNodeID;
+        next[0]=destinationNodeID;
+
     }
     else
     {
-        while(pathd[sourceNodeID][next]!=sourceNodeID)
+        while(pathd[sourceNodeID][next[next.size()-1]]!=sourceNodeID)
         {
-            next=pathd[sourceNodeID][next];
-        }
-    }
-    return next;
-
-
-    /*for(int k=0; k<nodeIDsSize; k++)
-    {
-        if(binary_search(sortedNodeIDs.begin(),sortedNodeIDs.end(),allNodeIDs[k])==true) continue;
-        for(int j=0; j<nodeIDsSize; j++)
-        {
-            if((d[sourceNodeID][allNodeIDs[k]]+d[allNodeIDs[k]][allNodeIDs[j]])<d[sourceNodeID][allNodeIDs[j]])
+            //next=pathd[sourceNodeID][next];
+            if(pathd[sourceNodeID][next[next.size()-1]]==-1)
             {
-                d[sourceNodeID][allNodeIDs[j]]=d[sourceNodeID][allNodeIDs[k]]+d[allNodeIDs[k]][allNodeIDs[j]];
-                pathd[sourceNodeID][allNodeIDs[j]]=pathd[allNodeIDs[k]][allNodeIDs[j]];
-                //pathd[sourceNodeID][allNodeIDs[j]]=allNodeIDs[k];
-            }
-        }
-    }*/
-
-    /*
-        if(PATHD[sourceNodeID][destinationNodeID]==-1) return -1;
-        int next;
-        bool isReturn;
-        isReturn=true;
-        next=PATHD[sourceNodeID][destinationNodeID];
-        if(next==sourceNodeID)
-        {
-            next=destinationNodeID;
-        }
-        else
-        {
-            while(PATHD[sourceNodeID][next]!=sourceNodeID)
-            {
-                if(binary_search(sortedNodeIDs.begin(),sortedNodeIDs.end(),next)==true)
-                {
-                    isReturn=false;
-                    break;
-                }
-                next=PATHD[sourceNodeID][next];
-            }
-        }
-        if(isReturn==true)
-        {
-            return next;
-        }
-        else
-        {
-            int nodeIDsSize;
-            nodeIDsSize=allNodeIDs.size();
-            int d[NODESNUM][NODESNUM],pathd[NODESNUM][NODESNUM];
-            memset(d,INF,NODESNUM*NODESNUM*sizeof(int));
-            memset(pathd,-1,NODESNUM*NODESNUM*sizeof(int));
-            for(int i=0; i<nodeIDsSize; i++)
-            {
-                for(int j=0; j<nodeIDsSize; j++)
-                {
-                    d[allNodeIDs[i]][allNodeIDs[j]]=D[allNodeIDs[i]][allNodeIDs[j]];
-                    pathd[allNodeIDs[i]][allNodeIDs[j]]=PATHD[allNodeIDs[i]][allNodeIDs[j]];
-                }
-            }
-            for(int k=0; k<nodeIDsSize; k++)
-            {
-                if(binary_search(sortedNodeIDs.begin(),sortedNodeIDs.end(),allNodeIDs[k])==true) continue;
-                for(int i=0; i<nodeIDsSize; i++)
-                {
-                    for(int j=0; j<nodeIDsSize; j++)
-                    {
-                        if((d[allNodeIDs[i]][allNodeIDs[k]]+d[allNodeIDs[k]][allNodeIDs[j]])<d[allNodeIDs[i]][allNodeIDs[j]])
-                        {
-                            d[allNodeIDs[i]][allNodeIDs[j]]=d[allNodeIDs[i]][allNodeIDs[k]]+d[allNodeIDs[k]][allNodeIDs[j]];
-                            pathd[allNodeIDs[i]][allNodeIDs[j]]=pathd[allNodeIDs[k]][allNodeIDs[j]];
-                        }
-                    }
-                }
-            }
-
-            if(pathd[sourceNodeID][destinationNodeID]==-1) return -1;
-            int next;
-            next=pathd[sourceNodeID][destinationNodeID];
-            if(next==sourceNodeID)
-            {
-                next=destinationNodeID;
+                next[0]=-1;
+                return next;
             }
             else
             {
-                while(pathd[sourceNodeID][next]!=sourceNodeID)
-                {
-                    next=pathd[sourceNodeID][next];
-                }
+                next.push_back(pathd[sourceNodeID][next[next.size()-1]]);
             }
-            return next;
-        }*/
-
+        }
+    }
+#ifndef  NDEBUGINTERFACE
+    cout<<"end serchinterface"<<endl;
+#endif // NDEBUGINTERFACE
+    return next;
 }

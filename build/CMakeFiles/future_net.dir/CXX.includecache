@@ -55,6 +55,8 @@ sys/timeb.h
 -
 memory.h
 -
+string
+-
 
 /home/zsd/桌面/HUAWEICodeCraft2016初赛赛题包/route_future_net/future_net/route.h
 iostream

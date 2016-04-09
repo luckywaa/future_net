@@ -42,8 +42,9 @@ bool IsInV(int ID);
 bool CompareLink(const LINK *a,const LINK *b);
 void Floyd();
 bool RouteSearch(PATH pathTemp,LINK link);
-bool StartRouteSearch();
-int SearchInterface(int sourceNodeID,int destinationNodeID,vector<unsigned short> sortedNodeIDs);
+bool StartRouteSearch(PATH pathTemp);
+vector<int> SearchInterface(int sourceNodeID,int destinationNodeID,vector<unsigned short> sortedNodeIDs);
+int SearchLinkID(int iSourceID,int iDestinationID);
 
 #ifndef NDEBUG
 void PrintTime();
