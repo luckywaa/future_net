@@ -39,6 +39,7 @@ public:
 };
 
 bool IsInV(int ID);
+bool CompareLinkCost(const LINK *a,const LINK *b);
 bool CompareLink(const LINK *a,const LINK *b);
 void Floyd();
 bool RouteSearch(PATH pathTemp,LINK link);

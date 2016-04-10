@@ -289,6 +289,7 @@ bool StartRouteSearch(PATH pathTemp)
             vector<int> interface;
             interface=SearchInterface(pathTemp.nodeIDs[pathTemp.nodeIDs.size()-1],V[i],pathTemp.sortedNodeIDs);
             if(interface[0]==-1) return false;
+            interface.pop_back();
             PATH myPathTemp=pathTemp;
             int iInterfaceSize=interface.size();
 #ifndef NDEBUGPATH1
@@ -349,6 +350,7 @@ bool StartRouteSearch(PATH pathTemp)
         vector<int> interface;
         interface=SearchInterface(pathTemp.nodeIDs[pathTemp.nodeIDs.size()-1],DestinationID,pathTemp.sortedNodeIDs);
         if(interface[0]==-1) return false;
+        interface.pop_back();
         int iInterfaceSize=interface.size();
         for(int j=iInterfaceSize-1; j>-1; j--)
         {
@@ -359,13 +361,13 @@ bool StartRouteSearch(PATH pathTemp)
             interface.pop_back();
         }
         if(pathTemp.nodeIDs[pathTemp.nodeIDs.size()-1]!=DestinationID)
-            {
-                int linkID=SearchLinkID(pathTemp.nodeIDs[pathTemp.nodeIDs.size()-1],DestinationID);
-                pathTemp.linkIDs.push_back(linkID);
-                pathTemp.cost+=links[linkID].Cost;
-                if(pathTemp.cost>path.cost) return false;
-                pathTemp.nodeIDs.push_back(DestinationID);
-            }
+        {
+            int linkID=SearchLinkID(pathTemp.nodeIDs[pathTemp.nodeIDs.size()-1],DestinationID);
+            pathTemp.linkIDs.push_back(linkID);
+            pathTemp.cost+=links[linkID].Cost;
+            if(pathTemp.cost>path.cost) return false;
+            pathTemp.nodeIDs.push_back(DestinationID);
+        }
         if(pathTemp.cost<path.cost)
         {
             path=pathTemp;
@@ -404,8 +406,20 @@ bool StartRouteSearch(PATH pathTemp)
 
 int SearchLinkID(int iSourceID,int iDestinationID)
 {
-    int linkID=-1,cost=INF;
-    int NodeLinksSize=nodes[iSourceID].nodeLinks.size();
+    //int linkID=-1,cost=INF;
+    int linkID=-1;
+    vector<LINK*> linksTemp=nodes[iSourceID].nodeLinks;
+    sort(linksTemp.begin(),linksTemp.end(),CompareLinkCost);
+    int NodeLinksSize=linksTemp.size();
+    for(int j=0; j<NodeLinksSize; j++)
+    {
+        if(linksTemp[j]->DestinationID==iDestinationID)
+        {
+            //cout<<"linkID = "<<linksTemp[j]->LinkID<<endl;
+            return linksTemp[j]->LinkID;
+        }
+    }
+    /*int NodeLinksSize=nodes[iSourceID].nodeLinks.size();
     for(int j=0; j<NodeLinksSize; j++)
     {
         if(nodes[iSourceID].nodeLinks[j]->DestinationID==iDestinationID)
@@ -416,13 +430,20 @@ int SearchLinkID(int iSourceID,int iDestinationID)
                 cost=nodes[iSourceID].nodeLinks[j]->Cost;
             }
         }
-    }
-    return linkID;
+    }*/
+   cout<<"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx linkID = "<<linkID<<endl;
+    //return linkID;
+    return -1;
 }
 
 bool IsInV(int ID)
 {
     return binary_search(V.begin(),V.end(),ID);
+}
+
+bool CompareLinkCost(const LINK *a,const LINK *b)
+{
+    return a->Cost < b->Cost;
 }
 
 bool CompareLink(const LINK *a,const LINK *b)
@@ -513,6 +534,7 @@ vector<int> SearchInterface(int sourceNodeID,int destinationNodeID,vector<unsign
     {
         final[sortedNodeIDs[i]]=true;
     }
+    if(destinationNodeID!=DestinationID) final[DestinationID]=true;
 #ifndef  NDEBUGINTERFACE
     cout<<"start2"<<endl;
 #endif // NDEBUGINTERFACE
@@ -546,6 +568,7 @@ vector<int> SearchInterface(int sourceNodeID,int destinationNodeID,vector<unsign
             {
                 d[allNodeIDs[j]] = d[allNodeIDs[k]] + D[allNodeIDs[k]][allNodeIDs[j]];
                 pathd[sourceNodeID][allNodeIDs[j]] = allNodeIDs[k];
+                //pathd[sourceNodeID][allNodeIDs[j]] = pathd[sourceNodeID][allNodeIDs[k]];
             }
         }
     }
@@ -561,16 +584,28 @@ vector<int> SearchInterface(int sourceNodeID,int destinationNodeID,vector<unsign
         next.push_back(-1);
         return next;
     }
+
+    int v=destinationNodeID;
+    while(v!=sourceNodeID)
+    {
+        next.push_back(v);
+        v=pathd[sourceNodeID][v];
+    }
+    next.push_back(v);
+
 #ifndef  NDEBUGINTERFACE
     cout<<"start5"<<endl;
 #endif // NDEBUGINTERFACE
     //next=pathd[sourceNodeID][destinationNodeID];
-    next.push_back(pathd[sourceNodeID][destinationNodeID]);
+
+    //next.push_back(pathd[sourceNodeID][destinationNodeID]);////////////////////////////////////
+
 #ifndef  NDEBUGINTERFACE
     cout<<"start6"<<endl;
 #endif // NDEBUGINTERFACE
     //if(next==sourceNodeID)
-    if(next[0]==sourceNodeID)
+    /////////////////////////////////////////////////////////////////
+    /*if(next[0]==sourceNodeID)
     {
         //next=destinationNodeID;
         next[0]=destinationNodeID;
@@ -591,7 +626,7 @@ vector<int> SearchInterface(int sourceNodeID,int destinationNodeID,vector<unsign
                 next.push_back(pathd[sourceNodeID][next[next.size()-1]]);
             }
         }
-    }
+    }*/
 #ifndef  NDEBUGINTERFACE
     cout<<"end serchinterface"<<endl;
 #endif // NDEBUGINTERFACE

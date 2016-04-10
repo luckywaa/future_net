@@ -39,10 +39,11 @@ public:
 };
 
 bool IsInV(int ID);
+bool CompareLinkCost(const LINK *a,const LINK *b);
 bool CompareLink(const LINK *a,const LINK *b);
 void Floyd();
 bool RouteSearch(PATH pathTemp,LINK link);
-bool StartRouteSearch();
+bool StartRouteSearch(PATH pathTemp);
 vector<int> SearchInterface(int sourceNodeID,int destinationNodeID,vector<unsigned short> sortedNodeIDs);
 int SearchLinkID(int iSourceID,int iDestinationID);
 
