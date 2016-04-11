@@ -511,20 +511,22 @@ vector<int> SearchInterface(int sourceNodeID,int destinationNodeID,vector<unsign
     nodeIDsSize=allNodeIDs.size();
     int d[NODESNUM],pathd[NODESNUM][NODESNUM];
     bool final[NODESNUM];//若final[i] = 1则说明 顶点vi已在集合S中
-    memset(d,INF,NODESNUM*sizeof(int));
-    memset(pathd,-1,NODESNUM*NODESNUM*sizeof(int));//设空路径
-    memset(final,false,NODESNUM*sizeof(int));
+    //memset(d,INF,NODESNUM*sizeof(int));
+    memcpy(d,D[sourceNodeID],sizeof(D[sourceNodeID]));
+    //memset(pathd,-1,NODESNUM*NODESNUM*sizeof(int));//设空路径
+    memcpy(pathd,PATHD,sizeof(PATHD));
+    memset(final,false,sizeof(final));
 #ifndef  NDEBUGINTERFACE
     cout<<"start1"<<endl;
 #endif // NDEBUGINTERFACE
-    for(int i=0; i<nodeIDsSize; i++)//循环 初始化
+    /*for(int i=0; i<nodeIDsSize; i++)//循环 初始化
     {
-        d[allNodeIDs[i]]=D[sourceNodeID][allNodeIDs[i]];
+        //d[allNodeIDs[i]]=D[sourceNodeID][allNodeIDs[i]];
         if(d[allNodeIDs[i]]<INF && allNodeIDs[i]!=sourceNodeID)
         {
             pathd[sourceNodeID][allNodeIDs[i]]=sourceNodeID;
         }
-    }
+    }*/
     d[sourceNodeID]=0;
     final[sourceNodeID]=true;//初始化 v0顶点属于集合S
     int sortedNodeSize;
